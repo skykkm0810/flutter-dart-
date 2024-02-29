@@ -7,22 +7,48 @@ class Player {
 
 void main() {
   var robin = Player();
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            centerTitle: true,
-            backgroundColor: Colors.blue[200],
-            title: Text('my app!'),
-          ),
-          body: Center(
-            child: Text('this text in the center'),
-          )),
-    );
+    return const MaterialApp(
+        home: Scaffold(
+      backgroundColor: Color(0xFF181818),
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: 20,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 80),
+            Row(),
+            SizedBox(height: 120),
+            Text(
+              'Total Balance',
+              style: TextStyle(fontSize: 22, color: Colors.white),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text(
+              "\$5 194 482",
+              style: TextStyle(
+                fontSize: 42,
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            )
+          ],
+        ),
+      ),
+    ));
   }
 }
